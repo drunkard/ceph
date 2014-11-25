@@ -14,69 +14,14 @@ Build Prerequisites
    Linux/Unix distribution.
 
 Before you can build Ceph source code, you need to install several libraries
-and tools. Ceph provides ``autoconf`` and ``automake`` scripts to get you
-started quickly. Ceph build scripts depend on the following:
+and tools. 
 
-- ``autotools-dev``
-- ``autoconf``
-- ``automake``
-- ``cdbs``
-- ``gcc``
-- ``g++``
-- ``git``
-- ``libboost-dev``
-- ``libedit-dev``
-- ``libssl-dev``
-- ``libtool``
-- ``libfcgi``
-- ``libfcgi-dev``
-- ``libfuse-dev``
-- ``linux-kernel-headers``
-- ``libcrypto++-dev``
-- ``libcrypto++``
-- ``libexpat1-dev``
-- ``pkg-config``
-- ``libcurl4-gnutls-dev``
+On Ubuntu or Debian, execute::
 
-On Ubuntu, execute ``sudo apt-get install`` for each dependency that isn't 
-installed on your host. ::
+	sudo apt-get install `./display-deb-deps.sh`
 
-	sudo apt-get install autoconf automake autotools-dev libbz2-dev debhelper default-jdk git javahelper junit4 libaio-dev libatomic-ops-dev libbabeltrace-ctf-dev libbabeltrace-dev libblkid-dev libboost-dev libboost-program-options-dev libboost-system-dev libboost-thread-dev libcurl4-gnutls-dev libedit-dev libexpat1-dev libfcgi-dev libfuse-dev libgoogle-perftools-dev libkeyutils-dev libleveldb-dev libnss3-dev libsnappy-dev liblttng-ust-dev libtool libudev-dev libxml2-dev pkg-config python python-argparse python-nose uuid-dev uuid-runtime xfslibs-dev yasm
-
-On Debian, execute ``aptitude install`` for each dependency that isn't 
-installed on your host. ::
-
-	aptitude install autoconf automake autotools-dev libbz2-dev debhelper default-jdk git javahelper junit4 libaio-dev libatomic-ops-dev libbabeltrace-ctf-dev libbabeltrace-dev libblkid-dev libboost-dev libboost-program-options-dev libboost-system-dev libboost-thread-dev libcurl4-gnutls-dev libedit-dev libexpat1-dev libfcgi-dev libfuse-dev libgoogle-perftools-dev libkeyutils-dev libleveldb-dev libnss3-dev libsnappy-dev liblttng-ust-dev libtool libudev-dev libxml2-dev pkg-config python python-argparse python-nose uuid-dev uuid-runtime xfslibs-dev yasm
-	
 .. note:: Some distributions that support Google's memory profiler tool may use
    a different package name (e.g., ``libgoogle-perftools4``).
-
-Ubuntu
-------
-
-- ``uuid-dev``
-- ``libkeyutils-dev``
-- ``libgoogle-perftools-dev``
-- ``libatomic-ops-dev``
-- ``libaio-dev``
-- ``libgdata-common``
-- ``libgdata13``
-- ``libsnappy-dev`` 
-- ``libleveldb-dev``
-
-Execute ``sudo apt-get install`` for each dependency that isn't installed on 
-your host. ::
-
-	sudo apt-get install uuid-dev libkeyutils-dev libgoogle-perftools-dev libatomic-ops-dev libaio-dev libgdata-common libgdata13 libsnappy-dev libleveldb-dev
-
-
-Debian
-------
-
-Alternatively, you may also install::
-
-	aptitude install fakeroot dpkg-dev
-	aptitude install debhelper cdbs libexpat1-dev libatomic-ops-dev
 
 openSUSE 11.2 (and later)
 -------------------------
@@ -99,7 +44,7 @@ As root, run:
 
 ::
 
-    yum install make automake autoconf  boost-devel fuse-devel gcc-c++ libtool libuuid-devel libblkid-devel keyutils-libs-devel cryptopp-devel fcgi-devel libcurl-devel expat-devel gperftools-devel libedit-devel libatomic_ops-devel snappy-devel leveldb-devel libaio-devel xfsprogs-devel git libudev-devel
+    yum-builddep ceph.spec
 
 
 Build Ceph

@@ -46,6 +46,7 @@ BuildRequires:	gdbm
 BuildRequires:	pkgconfig
 BuildRequires:	python
 BuildRequires:	python-nose
+BuildRequires:	python-virtualenv
 BuildRequires:	python-argparse
 BuildRequires:	libaio-devel
 BuildRequires:	libcurl-devel
@@ -56,6 +57,7 @@ BuildRequires:	libudev-devel
 BuildRequires:	leveldb-devel > 1.2
 BuildRequires:	xfsprogs-devel
 BuildRequires:	yasm
+BuildRequires:	xmlstarlet
 %if 0%{?rhel} || 0%{?centos} || 0%{?fedora}
 BuildRequires:	snappy-devel
 %endif

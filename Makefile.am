@@ -1,6 +1,6 @@
 AUTOMAKE_OPTIONS = gnu
 ACLOCAL_AMFLAGS = -I m4
-EXTRA_DIST = autogen.sh ceph.spec.in ceph.spec
+EXTRA_DIST = autogen.sh ceph.spec.in ceph.spec display-deb-deps.sh
 # the "." here makes sure check-local builds gtest before it is used
 SUBDIRS = . src man
 
@@ -55,9 +55,10 @@ clean-local:
 # bootstrap.
 install-deps:
 	if test -x /usr/bin/apt-get; then \
-	  sudo apt-get -y --no-install-recommends install `cat deps.deb.txt`; \
+	  sudo apt-get -y --no-install-recommends install `./display-deb-deps.sh`; \
 	else \
-	  sudo yum -y install `cat deps.rpm.txt`; \
+	  sudo yum install -y yum-utils; \
+	  sudo yum-builddep -y ceph.spec; \
 	fi
 
 dist-hook:
