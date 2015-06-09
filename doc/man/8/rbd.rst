@@ -131,12 +131,12 @@ Parameters
    an image. Multiple features can be enabled by repeating this option
    multiple times. The following features are supported:
 
-   layering: layering support
-   striping: striping v2 support
-   exclusive-lock: exclusive locking support
-   object-map: object map support (requires exclusive-lock)
-   fast-diff: fast diff calculations (requires object-map)
-   deep-flatten: snapshot flatten support
+   * layering: layering support
+   * striping: striping v2 support
+   * exclusive-lock: exclusive locking support
+   * object-map: object map support (requires exclusive-lock)
+   * fast-diff: fast diff calculations (requires object-map)
+   * deep-flatten: snapshot flatten support
 
 .. option:: --image-shared
 
