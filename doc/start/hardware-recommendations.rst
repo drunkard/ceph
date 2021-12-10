@@ -76,7 +76,7 @@ operating system page cache.  In bluestore you can adjust the amount of memory
 the OSD attempts to consume with the ``osd_memory_target`` configuration
 option.
 
-- Setting the osd_memory_target below 2GB is typically not recommended (it may
+- Setting the osd_memory_target below 2GB is typically not recommended, it may
   fail to keep the memory that low and may also cause extremely slow performance.
 
 - Setting the memory target between 2GB and 4GB typically works but may result
